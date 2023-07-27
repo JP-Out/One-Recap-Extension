@@ -1,6 +1,7 @@
 {
   "name": "One Recap",
   "description": "Extensão para pular o resumo dos episódios de One Piece pegando o minuto pelos comentários, dentro da Crunchyroll. \n \t Comentários devem estar carregados!",
+  "author": "JP-O",
   "version": "1.0",
   "manifest_version": 3,
   "permissions": ["tabs"],
