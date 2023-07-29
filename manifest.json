@@ -10,9 +10,17 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.crunchyroll.com/*"],
-      "js": ["content.js"],
+      "matches": [
+        "https://www.crunchyroll.com/*",
+        "https://static.crunchyroll.com/vilos-v2/web/vilos/player.html*"
+      ],
+      "js": ["content.js", "findButton.js"],
+      "css": ["style.css"],
       "run_at": "document_idle"
     }
-  ]
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'",
+    "sandbox": "sandbox allow-scripts; sandbox allow-modals"
+  }
 }

@@ -1,0 +1,23 @@
+#findButton {
+  text-size-adjust: 100%;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Lato, Helvetica Neue, helvetica, sans-serif;
+  font-weight: bold;
+  visibility: visible;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 0 0.125rem currentColor;
+  cursor: pointer;
+  height: 2.5rem;
+  justify-content: center;
+  min-width: 7.5rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition-duration: 0.2s;
+  transition-property: color, background-color, box-shadow;
+  transition-timing-function: ease;
+  user-select: none;
+  color: #dadada;
+}
