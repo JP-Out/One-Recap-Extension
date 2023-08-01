@@ -1,6 +1,9 @@
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
   if (message.action === 'extensionActivated') {
-    addButton();
+    const buttonElem = document.getElementById('findButton');
+    if (!buttonElem) {
+      addButton();
+    }
   }
 });
 
@@ -13,7 +16,7 @@ class CustomButton {
     this.element.classList.add('findButton');
 
     this.element.addEventListener('click', () => {
-      goToMinute(5);
+      // goToMinute(5);
       sendMessageJumpers();
       extractMinutesFromComments();
     });

@@ -7,9 +7,9 @@ function goToMinute(minute) {
   }
 }
 
-click() {
-    if (this.isVisible()) {
-      this.skipped = true;
-      goToTime(this.end);
-    }
-  }
+// click() {
+//     if (this.isVisible()) {
+//       this.skipped = true;
+//       goToTime(this.end);
+//     }
+//   }
