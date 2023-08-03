@@ -16,11 +16,12 @@ let videoPlayerData = null;
 
 // Evento que ouve mensagens recebidas de iframes
 window.addEventListener('message', (event) => {
-  debugger;
+  // debugger;
   // Verifica a origem da mensagem para garantir que ela venha do domínio correto
   if (event.origin === 'https://static.crunchyroll.com') {
     const data = event.data;
-    if (data.type === 'playerData') { //🧠 Por que deve ser esse 'playerData'
+    if (data.type === 'playerData') {
+      //🧠 Por que deve ser esse 'playerData'
       const videoPlayerData = data.data; // Recebe as informações do player de vídeo
 
       // Definindo o currentTime do player de vídeo
