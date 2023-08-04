@@ -7,32 +7,6 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
   }
 });
 
-function skipToTime() {
-  console.log(playerId);
-}
-
-// Defina uma variável para armazenar temporariamente os dados do player de vídeo
-let videoPlayerData = null;
-
-// Evento que ouve mensagens recebidas de iframes
-window.addEventListener('message', (event) => {
-  // debugger;
-  // Verifica a origem da mensagem para garantir que ela venha do domínio correto
-  if (event.origin === 'https://static.crunchyroll.com') {
-    const data = event.data;
-    if (data.type === 'playerData') {
-      //🧠 Por que deve ser esse 'playerData'
-      const videoPlayerData = data.data; // Recebe as informações do player de vídeo
-
-      // Definindo o currentTime do player de vídeo
-      const videoPlayer = document.getElementById('player0');
-      if (videoPlayer) {
-        videoPlayer.currentTime = videoPlayerData.currentTime;
-      }
-    }
-  }
-});
-
 class CustomButton {
   constructor() {
     this.element = document.createElement('button');
@@ -42,14 +16,6 @@ class CustomButton {
     this.element.classList.add('findButton');
 
     this.element.addEventListener('click', () => {
-      // Envia uma mensagem para o iframe solicitando as informações do player de vídeo
-      const iframe = document.getElementById('playerFrame'); // Supondo que o iframe do player tenha o ID "playerFrame"
-      if (iframe) {
-        iframe.contentWindow.postMessage({ type: 'getPlayerData' }, 'https://static.crunchyroll.com');
-      }
-
-      // skipToTime();
-      // sendMessageJumpers();
       extractMinutesFromComments();
     });
   }

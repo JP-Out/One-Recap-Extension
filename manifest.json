@@ -10,16 +10,9 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://static.crunchyroll.com/vilos-v2/web/vilos/player.html"],
-      "js": ["content_scripts/player/goToMinute.js"],
-      "run_at": "document_start",
-      "all_frames": true
-    },
-    {
       "matches": ["https://www.crunchyroll.com/*"],
       "js": [
         "content_scripts/content.js",
-        "content_scripts/getMetaData/getMetaData.js",
         "content_scripts/convertSeconds/convertSeconds.js",
         "content_scripts/button/findButton.js"
       ],
